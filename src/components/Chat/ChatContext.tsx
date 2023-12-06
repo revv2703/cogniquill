@@ -43,6 +43,11 @@ export const ChatContextProvider = ({fileId, children}: Props) => {
             })
 
             if(!response.ok){
+                toast({
+                    title: "There was a problem sending this message",
+                    description: "Maybe the developer is running low on funds. :(",
+                    variant: "destructive"
+                })
                 throw new Error("Failed to send the message")
             }
 

@@ -61,7 +61,7 @@ const PdfRenderer = ({ url }: PdfRendererProps) => {
 
   return (
     <div className="w-full bg-white rounded-lg shadow flex flex-col items-center">
-      <div className="h-14 w-full border-b border-zinc-200 flex items-center justify-between px-2 ">
+      <div className="h-14 w-full border-b border-zinc-200 flex items-center justify-between px-2">
         <div className="flex items-center gap-1.5">
           <Button disabled={currPage <= 1} onClick={() => {
             setCurrPage((prev) => (prev-1 > 1? prev-1 : 1))
@@ -147,9 +147,9 @@ const PdfRenderer = ({ url }: PdfRendererProps) => {
               onLoadSuccess={({numPages}) => setNumPages(numPages)}
               file={url}
               className="max-h-full">
-              {isLoading && renderedScale ? <Page width={width? width : 500} pageNumber={currPage} scale={scale} rotate={rotation} key={"@" + renderedScale} /> : null}  {/* custom set width to 500 instead of 1 */}
+              {isLoading && renderedScale ? <Page width={width? width : 1} pageNumber={currPage} scale={scale} rotate={rotation} key={"@" + renderedScale} /> : null}
 
-              <Page className={cn(isLoading ? "hidden" : "")} width={width? width : 500} pageNumber={currPage} scale={scale} rotate={rotation} key={"@" + scale} loading={
+              <Page className={cn(isLoading ? "hidden" : "")} width={width? width : 1} pageNumber={currPage} scale={scale} rotate={rotation} key={"@" + scale} loading={
                 <div className="flex justify-center">
                   <Loader2 className="my-24 h-6 w-6 animate-spin" />
                 </div>
