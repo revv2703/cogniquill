@@ -6,8 +6,6 @@ import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { GooglePaLMEmbeddings } from "langchain/embeddings/googlepalm";
 import { PineconeStore } from "langchain/vectorstores/pinecone";
 import { NextRequest } from "next/server";
-import { DiscussServiceClient } from "@google-ai/generativelanguage"
-import { GoogleAuth } from "google-auth-library"
 import { OpenAIStream, StreamingTextResponse } from "ai"
 import { OpenAIEmbeddings } from "langchain/embeddings/openai";
 import { openai } from "@/lib/openai";
