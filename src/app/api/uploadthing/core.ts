@@ -42,7 +42,7 @@ export const ourFileRouter = {
 
         // vectorize and index the document
 
-        // const pinecone = await getPineconeClient();
+        // const pinecone = getPineconeClient();
         const pineconeIndex = pinecone.Index("cogniquill");
 
         const embeddings = new OpenAIEmbeddings({
@@ -61,7 +61,6 @@ export const ourFileRouter = {
           textKey: createdFile.id,
         });}  catch(e){console.log(e)}
 
-        // 6:54:00
 
         await db.file.update({
           data: {
