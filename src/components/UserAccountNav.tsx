@@ -20,7 +20,7 @@ const UserAccountNav = async ({email, imageUrl, name}: UserAccountNavProps) => {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild className="overflow-visible">
-                <Button className="rounded-fulll h-8 w-8 aspect-square bg-slate-500">
+                <Button className="rounded-full h-8 w-8 aspect-square bg-slate-500">
                     <Avatar className="relative w-8 h-8">
                         {imageUrl ? (
                             <div className="relative aspect-square h-full w-full">
@@ -45,11 +45,11 @@ const UserAccountNav = async ({email, imageUrl, name}: UserAccountNavProps) => {
 
                 <DropdownMenuSeparator />
 
-                <DropdownMenuItem asChild>
+                <DropdownMenuItem asChild className="cursor-pointer">
                     <Link href='/dashboard'>Dashboard</Link>
                 </DropdownMenuItem>
 
-                <DropdownMenuItem asChild>
+                <DropdownMenuItem asChild className="cursor-pointer">
                     {(await subscriptionPlan).isSubscribed ? (
                         <Link href='/dashboard/billing'>Manage Subscription</Link>
                     ): (

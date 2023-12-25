@@ -4,6 +4,7 @@ import { buttonVariants } from "./ui/button"
 import { LoginLink, RegisterLink, getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server"
 import { ArrowRight } from "lucide-react"
 import UserAccountNav from "./UserAccountNav"
+import MobileNavbar from "./MobileNavbar"
 
 const Navbar = async () => {
 
@@ -17,7 +18,7 @@ const Navbar = async () => {
                         <span>CogniQuill</span>
                     </Link>
 
-                    {/* mobile navbar pending */}
+                    <MobileNavbar isAuth={!!user} />
                     <div className="hidden items-center space-x-4 sm:flex">
                         {!user ? (<>
                             <Link href = '/pricing' className = {buttonVariants({
